@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Profil">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="500px"
+            android:layout_height="500px"
+            app:srcCompat="@drawable/ic_screen"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/usernameprofil"
+        android:layout_gravity="center_horizontal"
+        android:text="contoh username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/nameprofil"
+        android:text="contoh name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_gravity="center"
+            android:text="LOGOUT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
