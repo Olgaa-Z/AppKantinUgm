@@ -4,136 +4,334 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whiteblue"
-    tools:context=".ui.Home">
+    tools:context=".MainActivity"
+    android:background="@drawable/tampilanhome">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp">
 
-    <TextView
-        android:id="@+id/saldo"
-        android:text="1000000"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp "
+            android:textSize="30dp"
+            android:textColor="@color/hitam"
+            android:textStyle="bold">
+        </TextView>
 
-    </TextView>
+        <TextView
+            android:id="@+id/saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50.000"
+            android:textSize="30dp"
+            android:textColor="@color/hitam"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/txtrp">
+        </TextView>
 
-<!--    <me.abhinay.input.CurrencyEditText-->
-<!--        android:id="@+id/saldo"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="18sp" />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current balance"
+            android:layout_below="@id/txtrp"
+            android:textSize="15dp"
+            android:textColor="@color/hitam"
+            android:textStyle="bold">
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_pay"
+            android:layout_toLeftOf="@id/relative_topup"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Pay"
+                android:textColor="@color/putih"
+                android:textStyle="bold">
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_topup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_topup"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Up"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/putih"
+                android:layout_centerInParent="true">
+            </TextView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
     <HorizontalScrollView
-        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_myqr"
-            android:layout_width="200dp"
-            app:cardCornerRadius="20dp"
-            android:elevation="8dp"
-            android:layout_height="200dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal"
+            <RelativeLayout
+                android:id="@+id/card_qr"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/icon_payment"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home">
 
-                </ImageView>
-                <TextView
-                    android:text="My QR"
+                <ImageView
+                    android:id="@+id/image_qr_code"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/qr_code"></ImageView>
+
+                <LinearLayout
+                    android:id="@+id/myqr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_qr_code"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="My"
+                        android:textColor="@color/birumuda"
+                        android:textSize="20dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QR"
+                        android:textColor="@color/oren"
+                        android:textSize="20dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/myqr"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="gbgsdbggw8rtggr">
 
                 </TextView>
 
-            </LinearLayout>
+            </RelativeLayout>
 
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvtransfer"
-            android:layout_width="200dp"
-            app:cardCornerRadius="10dp"
-            android:layout_marginLeft="30dp"
-            android:elevation="5dp"
-            android:layout_height="200dp">
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
+            <RelativeLayout
+                android:id="@+id/card_transfer"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/shape_home">
 
                 <ImageView
-                    android:src="@drawable/icon_payment"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp">
+                    android:id="@+id/image_transfer_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/transfer_balance"></ImageView>
 
-                </ImageView>
+                <LinearLayout
+                    android:id="@+id/transferbalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_transfer_balance"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer"
+                        android:textColor="@color/oren"
+                        android:textSize="20dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Balance"
+                        android:textColor="@color/hitam"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </LinearLayout>
 
                 <TextView
-                    android:text="Transfer Balance"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/transferbalance"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="gbgsdbggw8rtggr">
 
                 </TextView>
 
-            </LinearLayout>
+            </RelativeLayout>
 
-
-
-        </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="200dp"
-                app:cardCornerRadius="10dp"
-                android:layout_marginLeft="30dp"
-                android:elevation="5dp"
-                android:layout_height="200dp">
+            <RelativeLayout
+                android:id="@+id/card_promo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home"
+                android:layout_marginLeft="30dp">
 
                 <ImageView
-                    android:src="@drawable/icon_payment"
+                    android:id="@+id/image_promo"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/promo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp">
                 </ImageView>
 
-            </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:id="@+id/promo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/image_promo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="200dp"
-                app:cardCornerRadius="10dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Promo"
+                        android:textSize="20dp"
+                        android:textColor="@color/birumuda"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="tion"
+                        android:textSize="20dp"
+                        android:textColor="@color/hitam"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gbgsdbggw8rtggr"
+                    android:layout_below="@+id/promo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home"
                 android:layout_marginLeft="30dp"
-                android:elevation="5dp"
-                android:layout_height="200dp">
+                android:layout_marginRight="50dp">
 
                 <ImageView
-                    android:src="@drawable/icon_payment"
+                    android:id="@+id/image_history"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/history"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp">
                 </ImageView>
 
-            </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:id="@+id/history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/image_history"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hi"
+                        android:textSize="20dp"
+                        android:textColor="@color/hitam"
+                        android:textStyle="bold">
 
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="story"
+                        android:textSize="20dp"
+                        android:textColor="@color/birumuda"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gbgsdbggw8rtggr"
+                    android:layout_below="@+id/history"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp">
+
+                </TextView>
+
+            </RelativeLayout>
 
         </LinearLayout>
-
 
     </HorizontalScrollView>
 

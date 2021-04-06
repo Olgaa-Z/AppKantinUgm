@@ -42,13 +42,17 @@ class Home : Fragment() {
 
         //go to transfer balance
 
-        cvtransfer.setOnClickListener(){
+        card_transfer.setOnClickListener(){
             startActivity(Intent(context, TransferBalance::class.java))
         }
 
         //go to my scan QR
-        cv_myqr.setOnClickListener(){
+        card_qr.setOnClickListener(){
             startActivity(Intent(context, MyQr::class.java))
+        }
+
+        relative_topup.setOnClickListener(){
+
         }
 
     }

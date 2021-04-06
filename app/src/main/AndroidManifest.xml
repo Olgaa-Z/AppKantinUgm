@@ -12,10 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppKantinUgm"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.MyQr"></activity>
+        <activity android:name=".ui.Topup_Activity"></activity>
+        <activity android:name=".ui.HistoryPayment" />
+        <activity android:name=".ui.MyQr" />
         <activity
             android:name=".ui.TransferBalance"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
